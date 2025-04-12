@@ -1,21 +1,12 @@
 .trip-form {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
-  align-items: center;
 
   &__input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
 
-    &--start {
-      border-color: #4caf50;
-    }
-
-    &--end {
-      border-color: #2196f3;
-    }
   }
 
   &__button {
