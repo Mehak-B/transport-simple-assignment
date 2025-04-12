@@ -1,0 +1,34 @@
+<div class="trip-container">
+     @for( trip of trips();track trip.id; let i = $index){
+    
+      <div class="trip-node" [class.add-step]="trip.level === 2">
+        <div class="dot" [ngStyle]="{ background: getColor(trip.level) }"></div>
+        <div class="label">{{ trip.startLocation }} - {{ trip.endLocation }}</div>
+      </div>  
+        <div class="trip-line">
+      @if(trips()[i+1].level === 2 && trips()[i].level === 1){
+        <div class="step">
+          <div class="step-a"></div>
+          <div class="step-b"></div>
+        </div>
+      }
+      @else if (trips()[i+1].level === 1 && trips()[i].level === 2) {
+        <div class="reverse-step">
+          <div class="reverse-step-a"></div>
+          <div class="reverse-step-b"></div>
+        </div>
+
+      }
+      @else{
+          @if(trips()[i + 1].level === 1 || trips()[i + 1].level === 2){
+          <div class="line-wrapper" [class.add-step]="trip.level === 2">
+            @if(!trips()[i + 1].isContinued && trips()[i + 1].level === 1){
+            <span class="arrow">→</span>
+            }
+          </div>
+        }
+      }
+        </div>
+      }
+
+  </div>

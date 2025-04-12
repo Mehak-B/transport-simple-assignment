@@ -1,0 +1,110 @@
+.trip-container {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    height:50vh;
+    width:100vw;
+    padding: 30px;
+    overflow-x: auto;
+  }
+
+  .trip-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+  }
+
+  .label {
+    font-size: 12px;
+    text-align: center;
+    color: #444;
+    margin-bottom: 10px;
+  }
+
+  .trip-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+  }
+
+  .line-wrapper {
+    position: relative;
+    height: 2px;
+    width: 60px;
+    background: #aaa;
+    margin-top: 15px;
+  }
+
+  .arrow {
+    position: absolute;
+    right: -15px;
+    top: -10px;
+    font-size: 18px;
+    color: #555;
+  }
+
+.step{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    bottom: 40px;
+    transform:scaleX(1.5);
+
+ .step-a{
+  height:40px;
+  width:40px;
+  border-top:1px solid yellow;
+  border-left:1px solid yellow;
+  margin-left:40px;
+  border-top-left-radius: 30px;
+ 
+ }
+ .step-b{
+  height:40px;
+  width:40px;
+  border-bottom: 1px solid yellow;
+  border-right:1px solid yellow;
+  border-bottom-right-radius: 30px;
+
+ }
+}
+
+.reverse-step{
+  display:flex;
+  flex-direction: column;
+  position:relative;
+  bottom: 40px;
+  transform:scaleX(1.5);
+
+
+  .reverse-step-a{
+    height:40px;
+    width:40px;
+    border-top: 1px solid yellow;
+    border-right:1px solid yellow;
+    border-top-right-radius: 30px;
+
+  }
+
+  .reverse-step-b{
+    height:40px;
+    width:40px;
+    border-left: 1px solid yellow;
+    border-bottom:1px solid yellow;
+    border-bottom-left-radius: 30px;
+    margin-left:40px;
+  }
+}
+
+.add-step{
+  margin-bottom:165px;
+ }
