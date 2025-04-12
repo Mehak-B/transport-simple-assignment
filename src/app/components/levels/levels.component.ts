@@ -18,7 +18,7 @@ export class LevelsComponent {
 
 
   getColor(level: number): string {
-    const palette = ['#3F51B5', '#2196F3', '#FF9800'];
+    const palette = ['#3F51B5', '#2196F3'];
     return palette[level - 1] || '#000';
   }
 }

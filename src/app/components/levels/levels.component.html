@@ -4,6 +4,7 @@
         <div class="trip-container__dot" [ngStyle]="{ background: getColor(trip.level) }"></div>
         <div class="trip-container__label">{{ trip.startLocation }} - {{ trip.endLocation }}</div>
       </div>  
+      @if(i < trips().length-1){
         <div class="trip-container__trip-line">
       @if(trips()[i+1].level === 2 && trips()[i].level === 1){
         <div class="trip-container__step">
@@ -28,5 +29,6 @@
         }
       }
         </div>
+      }
     }
 </div>
