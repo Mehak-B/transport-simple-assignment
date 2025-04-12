@@ -1,34 +1,32 @@
 <div class="trip-container">
-     @for( trip of trips();track trip.id; let i = $index){
-    
-      <div class="trip-node" [class.add-step]="trip.level === 2">
-        <div class="dot" [ngStyle]="{ background: getColor(trip.level) }"></div>
-        <div class="label">{{ trip.startLocation }} - {{ trip.endLocation }}</div>
+     @for( trip of trips();track trip.id; let i = $index){ 
+      <div class="trip-container__node" [class.add-step]="trip.level === 2">
+        <div class="trip-container__dot" [ngStyle]="{ background: getColor(trip.level) }"></div>
+        <div class="trip-container__label">{{ trip.startLocation }} - {{ trip.endLocation }}</div>
       </div>  
-        <div class="trip-line">
+        <div class="trip-container__trip-line">
       @if(trips()[i+1].level === 2 && trips()[i].level === 1){
-        <div class="step">
-          <div class="step-a"></div>
-          <div class="step-b"></div>
+        <div class="trip-container__step">
+          <div class="trip-container__step--step-a"></div>
+          <div class="trip-container__step--step-b"></div>
         </div>
       }
       @else if (trips()[i+1].level === 1 && trips()[i].level === 2) {
-        <div class="reverse-step">
-          <div class="reverse-step-a"></div>
-          <div class="reverse-step-b"></div>
+        <div class="trip-container__reverse-step">
+          <div class="trip-container__reverse-step--reverse-step-a"></div>
+          <div class="trip-container__reverse-step--reverse-step-b"></div>
         </div>
 
       }
       @else{
           @if(trips()[i + 1].level === 1 || trips()[i + 1].level === 2){
-          <div class="line-wrapper" [class.add-step]="trip.level === 2">
+          <div class="trip-container__line-wrapper" [class.add-step]="trip.level === 2">
             @if(!trips()[i + 1].isContinued && trips()[i + 1].level === 1){
-            <span class="arrow">→</span>
+            <span class="trip-container__arrow"><i class="arrow-right right"></i></span>
             }
           </div>
         }
       }
         </div>
-      }
-
-  </div>
+    }
+</div>
